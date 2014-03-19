@@ -16,8 +16,8 @@ public class UpWeGo extends Game {
 	}
 
 	public UpWeGo() {
-		ImageCache.create(UpWeGo.class, "/TDResources/");
-		SoundManager.create(UpWeGo.class, "/TDResources/");
+		ImageCache.create(UpWeGo.class, "/Resources/");
+		SoundManager.create(UpWeGo.class, "/Resources/");
 
 		GRootContainer root = new GRootContainer(Color.GREEN);
 		setRootContainer(root);
