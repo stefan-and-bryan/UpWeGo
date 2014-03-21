@@ -21,6 +21,9 @@ public class UpWeGo extends Game {
 
 		GRootContainer root = new GRootContainer(Color.GREEN);
 		setRootContainer(root);
+		
+		GameView gameView = new GameView();
+		root.addView(View.GAME, gameView);
 
 		StartMenu startMenu = new StartMenu();
 		root.addView(View.START, startMenu);
@@ -28,8 +31,7 @@ public class UpWeGo extends Game {
 	//	StartMenuAnimation startmenuAnimation = new StartMenuAnimation();
 	//	root.addView(View.STARTANIM, startmenuAnimation);
 
-		GameView gameView = new GameView();
-		root.addView(View.GAME, gameView);
+
 
 		GameOverView gameOverView = new GameOverView();
 		root.addView(View.GAME_OVER, gameOverView);
