@@ -31,8 +31,6 @@ public class UpWeGo extends Game {
 	//	StartMenuAnimation startmenuAnimation = new StartMenuAnimation();
 	//	root.addView(View.STARTANIM, startmenuAnimation);
 
-
-
 		GameOverView gameOverView = new GameOverView();
 		root.addView(View.GAME_OVER, gameOverView);
 	}

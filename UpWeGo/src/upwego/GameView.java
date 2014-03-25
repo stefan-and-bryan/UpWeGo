@@ -13,7 +13,7 @@ public class GameView extends GContainer {
 		
 		for(int i=0; i<5; i++) {
 			Platform starting = new Platform();
-			addAt(starting,i*25+200, 480);
+			addAt(starting,i*25+300, 480);
 			
 		}
 		
