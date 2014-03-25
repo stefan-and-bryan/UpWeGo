@@ -23,15 +23,7 @@ public class GameView extends GContainer {
 		Protagonist THEMAN = new Protagonist();
 		addAtCenter(THEMAN);
 		
-		FrameListener velocity = new FrameListener() {
-
-			@Override
-			public void invoke(GObject target, Context context) {
-				// TODO Auto-generated method stub
-				THEMAN.setX(THEMAN.GetX+1);
-			}
-			
-		}
+	
 		
 		
 		
