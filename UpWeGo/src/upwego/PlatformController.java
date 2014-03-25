@@ -117,7 +117,6 @@ public class PlatformController implements Controller {
 		}
 
 		boolean onPlatform = false;
-		boolean onLiquidGround = false;
 
 		List<Platform> Platforms = context
 				.getInstancesOfClass(Platform.class);
@@ -140,12 +139,6 @@ public class PlatformController implements Controller {
 			} else {
 
 				vy = 0;
-			}
-		} else if (onLiquidGround) {
-			if (jump) {
-				vy += -.5;
-			} else {
-				vy = 1;
 			}
 		} else {
 			vy += gravity;
