@@ -121,9 +121,8 @@ public class PlatformController implements Controller {
 		List<Platform> Platforms = context
 				.getInstancesOfClass(Platform.class);
 
-		for (Platform Platform : Platforms) {
-
-			GObject groundObject = (GObject) Platform;
+		for (Platform platform : Platforms) {
+			GObject groundObject = (GObject) platform;
 			if (target.hitTest(groundObject)) {
 				onPlatform = true;
 				break;
