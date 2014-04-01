@@ -13,6 +13,7 @@ public class UpWeGo extends Game {
 
 		UpWeGo TDGame = new UpWeGo();
 		TDGame.startGame("UpWeGo");
+
 	}
 
 	public UpWeGo() {

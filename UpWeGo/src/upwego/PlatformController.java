@@ -145,9 +145,9 @@ public class PlatformController implements Controller {
 
 			
 
-			/*
-			 * if (vy + gravity < target.getHeight()) { vy += gravity; }
-			 */
+			
+			 // if (vy + gravity < target.getHeight()) { vy += gravity; }
+			 
 
 			// vy = Math.min(vy, target.getHeight());
 			// vy += gravity;
