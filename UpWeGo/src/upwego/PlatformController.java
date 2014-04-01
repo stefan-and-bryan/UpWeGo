@@ -94,6 +94,7 @@ public class PlatformController implements Controller {
 	@Override
 	public void controlObject(GObject target, Context context) {
 		// Ensure that this is locked to one object
+		int horizontal = 0;
 		if (object == null) {
 			object = target;
 		} else if (object != target) {
@@ -103,16 +104,20 @@ public class PlatformController implements Controller {
 
 		Set<Integer> keys = context.getKeyCodesPressed();
 
-		int horizontal = 0;
+		
 		boolean jump = false;
 
 		for (int key : keys) {
 			if (key == controlScheme.lt) {
-				horizontal += 1;
+				vx += 1;
 			} else if (key == controlScheme.rt) {
-				horizontal -= 1;
+				vx -= 1;
 			} else if (key == controlScheme.jump) {
 				jump = true;
+			} else if (vx<0) {
+				vx+=.1;
+			} else if (vx>0) {
+				vx-=.1;
 			}
 		}
 
@@ -152,9 +157,9 @@ public class PlatformController implements Controller {
 			// vy = Math.min(vy, target.getHeight());
 			// vy += gravity;
 		}
-		vx = horizontal * maxSpeed;
+//		vx = horizontal * maxSpeed;
 
-		target.setLocation(target.getX() + vx, target.getY() + vy);
+		target.setLocation(target.getX() - vx, target.getY() + vy);
 	}
 
 	/**
