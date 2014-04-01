@@ -10,6 +10,7 @@ public class Platform extends GSprite implements Floor {
 	super(new GSprite(ImageCache.forClass(UpWeGo.class).get(
 			"greensquare.jpg")));
 	this.setSize(25, 25);
+	setAnchorCenter();
 	}
 	
 }
