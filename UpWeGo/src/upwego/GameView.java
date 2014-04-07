@@ -12,8 +12,9 @@ public class GameView extends GContainer {
 	public GameView() {
 
 		super(new GSprite(ImageCache.forClass(UpWeGo.class).get(
-				"background.png")));
-		
+				"blank.png")));
+		MovingBackground background = new MovingBackground();
+		addAt(background, 0,-640);		
 		for(int i=0; i<5; i++) {
 			Platform starting = new Platform();
 			addAt(starting,i*25+300, 425);
@@ -22,6 +23,7 @@ public class GameView extends GContainer {
 		
 		Protagonist THEMAN = new Protagonist();
 		addAtCenter(THEMAN);
+
 		
 	
 		

@@ -13,7 +13,7 @@ public class Protagonist extends GSprite {
 				PlatformControlScheme.WASD, -10, -20, 3);
 	//	addController(klc);
 		PlatformController klc2 = new PlatformController(
-				PlatformControlScheme.ARROWS_SPACE, -10, -20, 3);
+				PlatformControlScheme.ARROWS_SPACE, 1, -20, 3);
 		addController(klc2);
 	}
 

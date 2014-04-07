@@ -159,7 +159,8 @@ public class PlatformController implements Controller {
 		}
 //		vx = horizontal * maxSpeed;
 
-		target.setLocation(target.getX() - vx, target.getY() + vy);
+		target.setLocation(target.getX() - (vx*maxSpeed), target.getY() + vy);
+		
 	}
 
 	/**
