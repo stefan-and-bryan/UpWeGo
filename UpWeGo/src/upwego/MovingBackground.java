@@ -9,9 +9,9 @@ public class MovingBackground extends GSprite {
 
 	super(new GSprite(ImageCache.forClass(UpWeGo.class).get(
 			"backgroundmove.png")));
-	PlatformController klc2 = new PlatformController(
-			PlatformControlScheme.ARROWS_SPACE, 0, -20, 0);
-	addController(klc2);
+
+
+
 	}
 
 }

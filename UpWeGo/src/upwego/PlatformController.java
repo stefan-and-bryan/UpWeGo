@@ -180,6 +180,13 @@ public class PlatformController implements Controller {
 	public double getMaxSpeed() {
 		return maxSpeed;
 	}
+	
+	public double getvy() {
+		return vy;
+	}
+	public void setvy(double newvy) {
+		vy=newvy;
+	}
 
 	/**
 	 * Sets the new maximum jump.
