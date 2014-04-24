@@ -93,8 +93,6 @@ public class PlatformController implements Controller {
 
 	@Override
 	public void controlObject(GObject target, Context context) {
-		// Ensure that this is locked to one object
-		int horizontal = 0;
 		if (object == null) {
 			object = target;
 		} else if (object != target) {
@@ -141,7 +139,7 @@ public class PlatformController implements Controller {
 				vy = maxJump;
 
 			} else {
-
+  
 				vy = 0;
 
 			}

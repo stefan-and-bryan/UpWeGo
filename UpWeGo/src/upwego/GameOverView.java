@@ -7,7 +7,7 @@ import jgame.ImageCache;
 public class GameOverView extends GContainer {
 	public GameOverView() {
 		super(new GSprite(ImageCache.forClass(UpWeGo.class).get(
-				"GameOver.png")));
+				"BestGameoverScreenEver.png")));
 		setSize(640, 640);
 
 	}

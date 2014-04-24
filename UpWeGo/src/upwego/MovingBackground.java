@@ -9,6 +9,8 @@ public class MovingBackground extends GSprite {
 
 	super(new GSprite(ImageCache.forClass(UpWeGo.class).get(
 			"backgroundmove.png")));
+	setSize(0,1920);
+	setAnchorCenter();
 
 
 

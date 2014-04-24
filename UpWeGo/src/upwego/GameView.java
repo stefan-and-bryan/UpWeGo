@@ -10,7 +10,7 @@ import jgame.listener.FrameListener;
 
 public class GameView extends GContainer {
 	
-	PlatformController protmove= new PlatformController(
+	public PlatformController protmove= new PlatformController(
 			PlatformControlScheme.ARROWS_SPACE, 1, -20, 3);
 	
 	public GameView() {
@@ -22,7 +22,7 @@ public class GameView extends GContainer {
 
 		
 		final MovingBackground background = new MovingBackground();
-		addAt(background, 0,-640);
+		addAtCenter(background);
 		FrameListener backgroundmovement = new FrameListener() {
 
 			@Override
@@ -32,7 +32,20 @@ public class GameView extends GContainer {
 			}
 			
 		};
+		
+		FrameListener Respawn = new FrameListener() {
+
+			@Override
+			public void invoke(GObject target, Context context) {
+				// TODO Auto-generated method stub
+				if (target.getY()+(.5*target.getHeight())>640)
+					context.setCurrentGameView(UpWeGo.View.GAME_OVER);
+			}
+			
+		};
+		
 		background.addListener(backgroundmovement);
+		
 		
 		for(int i=0; i<5; i++) {
 			Platform starting = new Platform();
@@ -43,6 +56,8 @@ public class GameView extends GContainer {
 		Protagonist THEMAN = new Protagonist();
 		addAtCenter(THEMAN);
 		THEMAN.addController(protmove);
+		THEMAN.addListener(Respawn);
+		
 		
 	
 		
