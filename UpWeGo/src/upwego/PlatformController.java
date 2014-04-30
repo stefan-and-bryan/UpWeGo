@@ -141,6 +141,7 @@ public class PlatformController implements Controller {
 			} else {
   
 				vy = 0;
+				
 
 			}
 		} else {

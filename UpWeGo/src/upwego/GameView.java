@@ -46,12 +46,10 @@ public class GameView extends GContainer {
 		
 		background.addListener(backgroundmovement);
 		
-		
-		for(int i=0; i<5; i++) {
+
 			Platform starting = new Platform();
-			addAt(starting,i*25+300, 425);
-			
-		}
+			addAt(starting,320, 425);
+
 		
 		Protagonist THEMAN = new Protagonist();
 		addAtCenter(THEMAN);

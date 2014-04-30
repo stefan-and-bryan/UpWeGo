@@ -17,12 +17,12 @@ public class Protagonist extends GSprite {
 
 			@Override
 			public void invoke(GObject target, Context context) {
-				// TODO Auto-generated method stub
-				target.setLocation(target.getX(),424);
+			
+				target.setLocation(target.getX(),target.getY()+1);
 			}
 			
 		};
-		//addListener(OnTop);
+//		addListener(OnTop);
 		
 	}
 	
