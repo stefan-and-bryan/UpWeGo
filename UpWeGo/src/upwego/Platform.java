@@ -12,7 +12,7 @@ public class Platform extends GSprite implements Floor {
 		
 	super(new GSprite(ImageCache.forClass(UpWeGo.class).get(
 			"wholeplatform.png")));
-	this.setSize(285, 57);
+	this.setSize(125, 25);
 	setAnchorCenter();
 	
 	FrameListener platformmovement = new FrameListener() {

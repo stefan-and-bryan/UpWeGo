@@ -9,12 +9,11 @@ import jgame.listener.FrameListener;
 
 
 public class GameView extends GContainer {
-	
+	int platNumber=2;
 	public PlatformController protmove= new PlatformController(
 			PlatformControlScheme.ARROWS_SPACE, 1, -20, 3);
 	
 	public GameView() {
-
 		super(new GSprite(ImageCache.forClass(UpWeGo.class).get(
 				"blank.png")));
 		setSize(640,640);
@@ -46,9 +45,16 @@ public class GameView extends GContainer {
 		
 		background.addListener(backgroundmovement);
 		
+		GObject[] Array;
+		Array = new GObject[11];
+		for(int i=0; i<platNumber; i++)
+			{
+			Array[i] = new Platform();
 
-			Platform starting = new Platform();
-			addAt(starting,320, 425);
+			}
+			
+			addAt(Array[0],320, 425);
+			addAt(Array[1], 400,600);
 
 		
 		Protagonist THEMAN = new Protagonist();
