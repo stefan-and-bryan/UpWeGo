@@ -11,7 +11,7 @@ import jgame.listener.FrameListener;
 public class GameView extends GContainer {
 	int platNumber=2;
 	public PlatformController protmove= new PlatformController(
-			PlatformControlScheme.ARROWS_SPACE, 1, -20, 3);
+			PlatformControlScheme.ARROWS_SPACE, 1, -20, 3/2);
 	
 	public GameView() {
 		super(new GSprite(ImageCache.forClass(UpWeGo.class).get(

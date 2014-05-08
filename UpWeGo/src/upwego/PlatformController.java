@@ -50,7 +50,18 @@ public class PlatformController implements Controller {
 	/**
 	 * The gravitational acceleration, in px/frame<sup>2</sup>.
 	 */
+	private boolean onSolidWall;
 	private double gravity;
+	
+	private double targetX;
+	private double targetY;
+	private double targetHeight;
+	private double targetWidth;
+	private double groundObjectX;
+	private double groundObjectY;
+	private double groundObjectHeight;
+	private double groundObjectWidth;
+	private double outOfGround;
 
 	/**
 	 * Creates the controller with the given parameters. The default
@@ -85,7 +96,7 @@ public class PlatformController implements Controller {
 			double maxSpeed, double maxJump, double gravity) {
 		super();
 		this.controlScheme = controlScheme;
-		vx = vy = 0;
+		vx = vy = outOfGround = 0;
 		this.maxSpeed = maxSpeed;
 		this.maxJump = maxJump;
 		this.gravity = gravity;
@@ -118,8 +129,9 @@ public class PlatformController implements Controller {
 				vx-=.1;
 			}
 		}
-
+		outOfGround = 0;
 		boolean onPlatform = false;
+		
 
 		List<Platform> Platforms = context
 				.getInstancesOfClass(Platform.class);
@@ -130,8 +142,36 @@ public class PlatformController implements Controller {
 				onPlatform = true;
 				break;
 			}
+			targetX = target.getX();
+			targetY = target.getY();
+			targetHeight = target.getHeight();
+			targetWidth = target.getWidth();
+			groundObjectX = groundObject.getX();
+			groundObjectY = groundObject.getY();
+			groundObjectHeight = groundObject.getHeight();
+			groundObjectWidth = groundObject.getWidth();
+			
+			if ((targetY +    (targetHeight / 2)) < (groundObjectY + (groundObjectHeight / 2) - 50)
+					&& (targetY + (targetHeight / 2)) > (groundObjectY - (groundObjectHeight / 2)) + 5) {
+
+				if ((targetX - (targetWidth / 2)) < (groundObjectX + (groundObjectWidth / 2) - 20)
+						&& (targetX + (targetWidth / 2)) > (groundObjectX - (groundObjectWidth / 2) + 20)) {
+
+					outOfGround = -(targetY + (targetHeight / 2))
+							+ (groundObjectY - (groundObjectHeight / 2));
+
+				} else if ((targetX - (targetWidth / 2)) < (groundObjectX + (groundObjectWidth / 2))
+						&& (targetX + (targetWidth / 2)) > (groundObjectX - (groundObjectWidth / 2))) {
+
+					vx = 0;
+					onPlatform = true;
+				}
+			}
 
 		}
+		
+		
+		
 
 		if (onPlatform) {
 			if (jump) {
@@ -150,17 +190,16 @@ public class PlatformController implements Controller {
 			
 
 			
-			 // if (vy + gravity < target.getHeight()) { vy += gravity; }
-			 
-
-			// vy = Math.min(vy, target.getHeight());
-			// vy += gravity;
 		}
 //		vx = horizontal * maxSpeed;
 
-		target.setLocation(target.getX() - (vx*maxSpeed), target.getY() + vy);
+		target.setLocation(target.getX() - (vx*maxSpeed), target.getY() + vy+outOfGround);
 		
 	}
+	
+	
+	
+	
 
 	/**
 	 * Gets the current maximum jump.
@@ -210,5 +249,8 @@ public class PlatformController implements Controller {
 		}
 		this.maxSpeed = maxSpeed;
 	}
+	
+	
+	
 
 }
