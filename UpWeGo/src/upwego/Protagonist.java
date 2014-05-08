@@ -10,8 +10,10 @@ public class Protagonist extends GSprite {
 	public Protagonist() {
 		super(new GSprite(ImageCache.forClass(UpWeGo.class).get(
 				"MAINCHARACTER.png")));
-		setAnchorPosition(1,116);
-		this.setSize(1,116);
+		this.setSize(70,116);
+//		setAnchorPosition(1,116);
+		setAnchorCenter();
+		
 		
 		HitTestListener OnTop = new HitTestListener(Platform.class) {
 
